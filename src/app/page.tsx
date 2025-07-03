@@ -15,10 +15,11 @@ const sections = [
 export default function Home() {
   // Smooth scroll handler
   useEffect(() => {
-    const handleLinkClick = (e: any) => {
-      if (e.target.dataset.scroll) {
+    const handleLinkClick = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.dataset && target.dataset.scroll) {
         e.preventDefault();
-        const id = e.target.dataset.scroll;
+        const id = target.dataset.scroll;
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth" });
       }
@@ -92,7 +93,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-lg text-gray-700 space-y-6">
               <p>
-                At <span className="font-bold">Energy South Africa</span>, we are driven by a singular mission: to revolutionize the energy landscape of our nation. Established with a deep understanding of South Africa's unique energy challenges and opportunities, we are committed to delivering innovative, sustainable, and reliable energy solutions that empower communities and fuel economic growth.
+                At <span className="font-bold">Energy South Africa</span>, we are driven by a singular mission: to revolutionize the energy landscape of our nation. Established with a deep understanding of South Africa&apos;s unique energy challenges and opportunities, we are committed to delivering innovative, sustainable, and reliable energy solutions that empower communities and fuel economic growth.
               </p>
               <p>
                 Our team comprises seasoned experts in renewable energy, energy efficiency, and power infrastructure, all dedicated to fostering a greener, more resilient future. We believe in harnessing the abundant natural resources of South Africa – from the sun to the wind – to create a robust and equitable energy system for all.
@@ -100,7 +101,7 @@ export default function Home() {
             </div>
             <div className="relative flex justify-center items-center">
               <div className="w-full h-64 md:h-96 bg-blue-100 rounded-2xl shadow-xl overflow-hidden">
-                <Image
+          <Image
                   src="/solar-panels.webp"
                   alt="Solar panels in South Africa"
                   fill
@@ -215,7 +216,7 @@ export default function Home() {
               <TrendingUp className="h-16 w-16 text-red-500 mb-6" />
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Grid Modernization</h3>
               <p className="text-gray-700 mb-6">
-                We contribute to the modernization of South Africa's electrical grid, integrating smart technologies and decentralized energy sources to enhance reliability, efficiency, and resilience.
+                We contribute to the modernization of South Africa&apos;s electrical grid, integrating smart technologies and decentralized energy sources to enhance reliability, efficiency, and resilience.
               </p>
               <ul className="text-left text-gray-600 space-y-2 w-full">
                 <li className="flex items-center"><ChevronRight className="h-4 w-4 text-blue-500 mr-2" /> Smart Grid Solutions</li>
