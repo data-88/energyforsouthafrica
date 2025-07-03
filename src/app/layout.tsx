@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Official website for Energy South Africa.",
 };
 
+<Analytics />
+
 export default function RootLayout({
   children,
 }: Readonly<{
